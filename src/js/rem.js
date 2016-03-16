@@ -13,19 +13,19 @@
 (function(win, doc) {
 	var docEl = doc.documentElement,
 		designWidth = docEl.dataset.designWidth || 750,
-		resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-		dpr = /iphone|ipod|ipad/gi.test(navigator.userAgent) ? Math.min(win.devicePixelRatio, 3) : 1,
-		rem;
+		resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
 
-	docEl.dataset.dpr = dpr;
+	// ios 下标记 dpr
+	if ( /iphone|ipod|ipad/gi.test(navigator.userAgent) ) {
+		docEl.dataset.dpr = win.devicePixelRatio;
+	}
 
 	// 更新 rem
 	var updateREM = function() {
-		var width = docEl.clientWidth;
+		var width = Math.min(docEl.clientWidth, designWidth),
+			ppr = width / designWidth * 100;
 
-		width = Math.min(width, designWidth * dpr);
-		rem = width / designWidth * 100;
-		docEl.style.fontSize = rem + 'px';
+		docEl.style.fontSize = ppr + 'px';
 	};
 	updateREM();
 
