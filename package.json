@@ -1,0 +1,32 @@
+{
+  "name": "viewport",
+  "version": "1.0.0",
+  "description": "Helper for making viewport adapted.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node devServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/re54k/viewport.git"
+  },
+  "keywords": [
+    "viewport",
+    "adapter",
+    "rem",
+    "mobileweb"
+  ],
+  "author": "re54k",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/re54k/viewport/issues"
+  },
+  "homepage": "https://github.com/re54k/viewport#readme",
+  "devDependencies": {
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.1.0",
+    "postcss-border-width": "0.0.1",
+    "postcss-pxtorem": "^3.3.1"
+  }
+}

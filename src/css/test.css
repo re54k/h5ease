@@ -1,0 +1,27 @@
+.app {
+  position: relative;
+  display: -webkit-flex;
+  align-items: center;
+  padding: 0.26rem 0.2rem;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.t1 {
+    border-color: red;
+}
+
+.t2 {
+    border: 1px solid;
+}
+
+.t3 {
+    border: 2px solid;
+}
+
+.t4 {
+    border: 1px solid;
+}
+
+.t5 {
+    border: 2px solid;
+}

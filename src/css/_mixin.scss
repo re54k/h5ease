@@ -1,0 +1,35 @@
+// border 适配方式一
+// 较适用于 css-modules 中的小模块
+@mixin border($bdv, $w, $s, $c) {
+    #{$bdv}: $w $s $c;
+    @at-root .iosx2 & {
+        border-width: $w/2;
+    }
+    @at-root .iosx3 & {
+        border-width: $w/2.8;
+    }
+}
+
+// border 适配方式二
+// 利用 extend 将相同的 border-width 集中，减少代码量
+//@mixin borderWidth($w) {
+//    .iosx2 & {
+//        border-width: $w/2;
+//    }
+//    .iosx3 & {
+//        border-width: $w/2.8;
+//    }
+//}
+//
+//%border-1px {
+//    @include borderWidth(1px);
+//}
+//
+//%border-2px {
+//    @include borderWidth(2px);
+//}
+//
+//@mixin border($bdv, $w, $s, $c) {
+//    #{$bdv}: $w $s $c;
+//    @extend %border-#{$w};
+//}
