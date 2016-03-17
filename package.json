@@ -1,6 +1,6 @@
 {
   "name": "viewport",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Make mobile web development easy.",
   "main": "index.js",
   "scripts": {
