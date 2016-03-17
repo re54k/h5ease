@@ -1,33 +1,34 @@
 {
   "name": "viewport",
   "version": "1.0.0",
-  "description": "Helper for making viewport adapted.",
+  "description": "Make mobile web development easy.",
   "main": "index.js",
   "scripts": {
     "start": "node devServer.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/re54k/viewport.git"
+    "url": "git+https://github.com/re54k/h5ease.git"
   },
   "keywords": [
-    "viewport",
+    "mobileweb",
+    "h5",
     "adapter",
     "rem",
-    "mobileweb"
+    "1px border"
   ],
   "author": "re54k",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/re54k/viewport/issues"
+    "url": "https://github.com/re54k/h5ease/issues"
   },
-  "homepage": "https://github.com/re54k/viewport#readme",
+  "homepage": "https://github.com/re54k/h5ease#readme",
   "devDependencies": {
     "express": "^4.13.4",
     "gulp": "^3.9.1",
     "gulp-postcss": "^6.1.0",
-    "postcss-border-width": "0.0.1",
-    "postcss-pxtorem": "^3.3.1",
-    "postcss-sprites": "^3.1.0"
+    "gulp-sass": "^2.2.0",
+    "postcss-border-width": "^0.0.1",
+    "postcss-pxtorem": "^3.3.1"
   }
 }

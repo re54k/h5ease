@@ -1,36 +1,28 @@
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
+var sass = require('gulp-sass');
 var pxtorem = require('postcss-pxtorem');
 var border = require('postcss-border-width');
-var sprites = require('postcss-sprites').default;
 
 
-gulp.task('default', function () {
+gulp.task('css', function () {
 	var processors = [
-		sprites({
-			stylesheetPath: './src/css',
-			spritePath: './src/img/',
-			outputDimensions: true,
-			filterBy: function(img) {
-				if ( /\/sp\-/.test(img.url) ) {
-					return Promise.resolve();
-				}
-				return Promise.reject();
-			},
-			groupBy: function(img) {
-				var match = img.url.match(/\/(sp\-[^\/]+)\//);
-				return match ? Promise.resolve(match[1]) : Promise.reject();
-			}
-		}),
 		pxtorem({
 			rootValue: 100,
 			propWhiteList: [],
 			minPixelValue: 3
 		}),
-		border
+		border({
+
+		})
 	];
 
-	return gulp.src(['src/css/**/*.css'])
+	return gulp.src(['src/css/scss/*.scss'])
 		.pipe(postcss(processors))
-		.pipe(gulp.dest('dist/css'));
+		.pipe(sass().on('error', sass.logError))
+		.pipe(gulp.dest('src/css'));
+});
+
+gulp.task('watch', function() {
+	gulp.watch(['src/css/scss/*.scss'], ['css']);
 });
