@@ -12,14 +12,12 @@ gulp.task('css', function () {
 			propWhiteList: [],
 			minPixelValue: 3
 		}),
-		border({
-
-		})
+		border
 	];
 
 	return gulp.src(['src/css/scss/*.scss'])
-		.pipe(postcss(processors))
 		.pipe(sass().on('error', sass.logError))
+		.pipe(postcss(processors))
 		.pipe(gulp.dest('src/css'));
 });
 
